@@ -12,15 +12,18 @@ public:
 	
 	int isPalindrome(string st)
 	{
-	    
-	    string snew = st;
-	    int s = 0 , e = snew.length()-1;
-	    while(s<e){
-	        swap(snew[s++],snew[e--]);
+	    int n = st.size();
+	    int s = 0 , e = n-1;
+	    while(s<e) {
+	        if(st[s] != st[e]){
+	            return 0;
+	        }
+	        else{
+	            s++;
+	            e--;
+	        }
 	    }
-	   if(st == snew) return 1;
-	   else return 0;
-	    
+	    return 1;
 	    // Your code goes here
 	}
 
